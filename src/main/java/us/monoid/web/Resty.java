@@ -602,6 +602,13 @@ public class Resty {
 	}
 
 	/**
+	 * Tell Resty to patch the specified content on the server, resulting in a PATCH operation instead of a POST operation. Example use: r.json(uri, patch(content("bubu")));
+	 */
+	public static AbstractContent patch(Content someContent) {
+		return new Patch(someContent);
+	}
+
+	/**
 	 * Tell Resty to delete the URL content on the server, resulting in a DELETE. Example use: r.json(uri,delete());
 	 */
 	public static AbstractContent delete() {
